@@ -25,6 +25,22 @@ class MainMenu : AppCompatActivity() {
             // Start the MainActivity
             startActivity(intent)
         }
+        val settingbutton: Button = findViewById(R.id.button2)
+
+        settingbutton.setOnClickListener {
+            // Create an Intent to start MainActivity
+            val intent = Intent(this, Settings::class.java)
+            // Start the MainActivity
+            startActivity(intent)
+        }
+        val leaderbbutton: Button = findViewById(R.id.button3)
+
+        leaderbbutton.setOnClickListener {
+            // Create an Intent to start MainActivity
+            val intent = Intent(this, LeaderBoard::class.java)
+            // Start the MainActivity
+            startActivity(intent)
+        }
         }
 
     }
