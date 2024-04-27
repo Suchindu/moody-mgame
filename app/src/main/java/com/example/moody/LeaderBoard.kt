@@ -1,20 +1,34 @@
 package com.example.moody
 
+import android.content.Context
 import android.os.Bundle
-import androidx.activity.enableEdgeToEdge
+import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
+
 
 class LeaderBoard : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        enableEdgeToEdge()
         setContentView(R.layout.activity_leader_board)
-        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
-            val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
-            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
-            insets
+
+        val sharedPreferences = getSharedPreferences("com.example.moody", Context.MODE_PRIVATE)
+        val scores =
+            sharedPreferences.getStringSet("scores", mutableSetOf())?.map { it.toInt() } ?: listOf()
+
+        // Sort the scores in descending order
+        val sortedScores = scores.sortedDescending()
+
+        // Display the scores. This depends on your layout and how you want to display the scores.
+        // For example, if you have a TextView for each score:
+        val scoreTextViews = listOf<TextView>(
+            findViewById(R.id.textView),
+            findViewById(R.id.textView2),
+            findViewById(R.id.textView3)
+            // Add more TextViews if you have more
+        )
+
+        for (i in sortedScores.indices) {
+            scoreTextViews[i].text = sortedScores[i].toString()
         }
     }
 }
