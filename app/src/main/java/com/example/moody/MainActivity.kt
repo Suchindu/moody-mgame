@@ -23,7 +23,7 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = DataBindingUtil.setContentView(this, R.layout.activity_main)
-        binding.catchFruits = this
+        binding.catchmood = this
         binding.score = getString(R.string.score_0)
         score = 0
         imageArray.addAll(
@@ -33,8 +33,11 @@ class MainActivity : AppCompatActivity() {
                 binding.ivPear, binding.ivStrawberry, binding.ivWatermelon
             )
         )
-        hideImages()
-        playAndRestart()
+        imageArray.forEach { it.visibility = View.INVISIBLE }
+        binding.playbutton.setOnClickListener {
+
+            playAndRestart()
+        }
     }
 
     private fun hideImages() {
@@ -68,7 +71,7 @@ class MainActivity : AppCompatActivity() {
                 AlertDialog.Builder(this@MainActivity).apply {
                     setCancelable(false)
                     setTitle(getString(R.string.game_name))
-                    setMessage("Your score : $score\nWould you like to play again?")
+                    setMessage("Your score : $score")
                     setPositiveButton(getString(R.string.yes)) { _, _ -> playAndRestart() }
                     setNegativeButton(getString(R.string.no)) { _, _ ->
                         score = 0
