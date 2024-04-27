@@ -36,16 +36,16 @@ class MainActivity : AppCompatActivity() {
         score = 0
         imageArray.addAll(
             listOf(
-                binding.ivApple, binding.ivBanana, binding.ivCherry,
-                binding.ivGrapes, binding.ivKiwi, binding.ivOrange,
-                binding.ivPear, binding.ivStrawberry, binding.ivWatermelon
+                binding.ivLaugh, binding.ivLove, binding.ivSmile,
+                binding.ivCare, binding.ivAngry, binding.ivPain,
+                binding.ivEmotion, binding.ivWow, binding.ivSad
             )
         )
         mediaPlayer = MediaPlayer.create(this, R.raw.bg)
         mediaPlayer.isLooping = true
         mediaPlayer.start()
 
-        imageArray.forEach { it.visibility = View.INVISIBLE }
+//        imageArray.forEach { it.visibility = View.INVISIBLE }
         binding.playbutton.setOnClickListener {
 
             playAndRestart()
@@ -103,7 +103,7 @@ class MainActivity : AppCompatActivity() {
                 AlertDialog.Builder(this@MainActivity).apply {
                     setCancelable(false)
                     setTitle(getString(R.string.game_name))
-                    setMessage("Your score : $score")
+                    setMessage("YOUR SCORE IS : $score")
                     setPositiveButton(getString(R.string.yes)) { _, _ -> playAndRestart() }
                     setNegativeButton(getString(R.string.no)) { _, _ ->
                         score = 0
