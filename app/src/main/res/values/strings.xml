@@ -2,14 +2,18 @@
     <string name="app_name">Moody</string>
     <string name="score_0">Score : 0</string>
     <string name="time_10">Time : 10</string>
-    <string name="fruit">Fruit</string>
-    <string name="yes">Play Again</string>
-    <string name="game_name">Catch The Fruits</string>
-    <string name="no">Back to Menu</string>
+    <string name="fruit">Mood</string>
+    <string name="yes">PLAY AGAIN</string>
+    <string name="game_name">CATCH THE MOOD</string>
+    <string name="no">BACK TO MENU</string>
     <string name="time">Time : "</string>
     <string name="time_up">Time\'s up!!!</string>
     <string name="start_game">Start Game</string>
     <string name="settings">Settings</string>
     <string name="leaderboard">Leaderboard</string>
     <string name="play">Play</string>
+    <string name="back">Back</string>
+    <string name="togglebutton">ToggleButton</string>
+    <string name="moody">Moody</string>
+    <string name="catch_the_mood">Catch the Mood</string>
 </resources>
