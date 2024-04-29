@@ -25,7 +25,7 @@ class MainActivity : AppCompatActivity() {
     private val handler = android.os.Handler(Looper.getMainLooper())
     private lateinit var runnable: Runnable
     private lateinit var mediaPlayer: MediaPlayer
-
+    private var isGameStarted = false
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -47,7 +47,7 @@ class MainActivity : AppCompatActivity() {
 
 //        imageArray.forEach { it.visibility = View.INVISIBLE }
         binding.playbutton.setOnClickListener {
-
+            isGameStarted = true
             playAndRestart()
         }
 
@@ -83,7 +83,9 @@ class MainActivity : AppCompatActivity() {
 
     @SuppressLint("SetTextI18n")
     fun increaseScore() {
-        binding.score = "Score : " + (++score)
+        if(isGameStarted) {
+            binding.score = "Score : " + (++score)
+        }
     }
 
     @SuppressLint("SetTextI18n")
