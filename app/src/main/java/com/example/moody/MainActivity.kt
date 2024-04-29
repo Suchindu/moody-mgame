@@ -84,7 +84,8 @@ class MainActivity : AppCompatActivity() {
     @SuppressLint("SetTextI18n")
     fun increaseScore() {
         if(isGameStarted) {
-            binding.score = "Score : " + (++score)
+            score += 5
+            binding.score = "Score : $score "
         }
     }
 

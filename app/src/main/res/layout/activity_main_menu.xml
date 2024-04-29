@@ -29,7 +29,7 @@
                 android:fontFamily="@font/bangers"
                 android:text="@string/moody"
                 android:textAlignment="center"
-                android:textSize="70sp"
+                android:textSize="80sp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -42,55 +42,51 @@
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/boogaloo"
                 android:text="@string/catch_the_mood"
-                android:textSize="20sp"
+                android:textSize="23sp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.501"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.312" />
+                app:layout_constraintVertical_bias="0.327" />
 
             <Button
                 android:id="@+id/button"
                 android:layout_width="175dp"
-                android:layout_height="wrap_content"
+                android:layout_height="60dp"
                 android:fontFamily="@font/carter_one"
                 android:text="@string/start_game"
-                android:textSize="15sp"
+                android:textSize="17sp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.5"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.452" />
+                app:layout_constraintVertical_bias="0.464" />
 
             <Button
                 android:id="@+id/button2"
                 android:layout_width="175dp"
-                android:layout_height="wrap_content"
+                android:layout_height="60dp"
                 android:fontFamily="@font/carter_one"
                 android:text="@string/settings"
-                android:textSize="15sp"
+                android:textSize="17sp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.5"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.55" />
+                app:layout_constraintVertical_bias="0.569" />
 
             <Button
                 android:id="@+id/button3"
                 android:layout_width="175dp"
-                android:layout_height="wrap_content"
+                android:layout_height="60dp"
                 android:fontFamily="@font/carter_one"
                 android:text="@string/leaderboard"
-                android:textSize="15sp"
+                android:textSize="17sp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.5"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.653" />
+                app:layout_constraintVertical_bias="0.671" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
     </FrameLayout>
