@@ -2,6 +2,7 @@ package com.example.moody
 
 import android.content.Context
 import android.os.Bundle
+import android.widget.Button
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 
@@ -29,6 +30,19 @@ class LeaderBoard : AppCompatActivity() {
 
         for (i in sortedScores.indices) {
             scoreTextViews[i].text = sortedScores[i].toString()
+        }
+
+        val resetButton = findViewById<Button>(R.id.button4) // Replace with your reset button's ID
+
+        resetButton.setOnClickListener {
+            val sharedPreferences = getSharedPreferences("com.example.moody", Context.MODE_PRIVATE)
+            val editor = sharedPreferences.edit()
+            editor.clear()
+            editor.apply()
+
+            for (textView in scoreTextViews) {
+                textView.text = ""
+            }
         }
     }
 }

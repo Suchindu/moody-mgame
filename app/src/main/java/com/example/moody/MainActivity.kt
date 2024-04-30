@@ -25,7 +25,7 @@ class MainActivity : AppCompatActivity() {
     private val handler = android.os.Handler(Looper.getMainLooper())
     private lateinit var runnable: Runnable
     private lateinit var mediaPlayer: MediaPlayer
-
+    private var isGameStarted = false
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -47,7 +47,7 @@ class MainActivity : AppCompatActivity() {
 
 //        imageArray.forEach { it.visibility = View.INVISIBLE }
         binding.playbutton.setOnClickListener {
-
+            isGameStarted = true
             playAndRestart()
         }
 
@@ -83,11 +83,15 @@ class MainActivity : AppCompatActivity() {
 
     @SuppressLint("SetTextI18n")
     fun increaseScore() {
-        binding.score = "Score : " + (++score)
+        if(isGameStarted) {
+            score += 5
+            binding.score = "Score : $score "
+        }
     }
 
     @SuppressLint("SetTextI18n")
     fun playAndRestart() {
+        binding.playbutton.isEnabled = false
         score = 0
         binding.score = "Score : 0"
         hideImages()
@@ -99,6 +103,7 @@ class MainActivity : AppCompatActivity() {
             override fun onFinish() {
                 binding.time = getString(R.string.time_up)
                 handler.removeCallbacks(runnable)
+                binding.playbutton.isEnabled = true
 
                 AlertDialog.Builder(this@MainActivity).apply {
                     setCancelable(false)
