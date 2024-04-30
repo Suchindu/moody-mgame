@@ -91,6 +91,7 @@ class MainActivity : AppCompatActivity() {
 
     @SuppressLint("SetTextI18n")
     fun playAndRestart() {
+        binding.playbutton.isEnabled = false
         score = 0
         binding.score = "Score : 0"
         hideImages()
@@ -102,6 +103,7 @@ class MainActivity : AppCompatActivity() {
             override fun onFinish() {
                 binding.time = getString(R.string.time_up)
                 handler.removeCallbacks(runnable)
+                binding.playbutton.isEnabled = true
 
                 AlertDialog.Builder(this@MainActivity).apply {
                     setCancelable(false)
